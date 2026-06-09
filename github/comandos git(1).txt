@@ -1,0 +1,83 @@
+Comandos Git Importantes
+(Lembrando que devem ser feito todos no bash)
+
+ls || Listar arquivos
+mkdir || Criar diretório
+pwd || Mostra localização atual
+
+
+----------------------------------------------------SOBRE GIT----------------------------------------------------
+
+Git é um app de versionamento de arquivos de texto.
+
+git init . || Cria repositório na pasta atual (usar 'pwd' para saber qual pasta está e 'cd' para navegar entre pastas)
+git rm -rf .git || Destroi repositório caso tenha feito sem querer, de forma recursiva e forçada
+git status || Mostra arquivos dentro e fora do commit
+
+git add . || Adiciona todas as modificações do diretório atual de uma vez para o próximo commit
+git add * || Adiciona TUDO
+git add nome_arquivo || Adiciona o arquivo em específico
+
+git commit -m "mensagem" || Commit e mensagem que será enviada, com '-m' servindo para registrar a mensagem
+git commit -m "Título do commit" -m "Explicação mais detalhada do que foi feito." || Para digitar título e subtítulo
+
+git log || Histórico de commits com mensagem, data e hash do commit
+git cat-file -p nome_arquivo || Serve para visualizar o conteúdo do texto no terminal 
+
+git diff nome_arquivo || Mostra todas as alterações não salvas feitas no arquivo
+git diff * || Mostra as alterações de cada arquivo
+
+git reset nome_arquivo || Remove o arquivo do Stage (arquivos que serão commitados)
+
+
+----------------------------------------------------SOBRE BRANCH----------------------------------------------------
+
+git checkout -b nome_branch || Cria uma nova branch e muda direto pra ela ( '-b' que cria a branch e muda)
+git checkout nome_branch || Muda para a branch selecionada
+
+git branch || Mostra todas as branch do projeto e qual você está no momento
+git branch -m nome_novo_branch || Renomeia a branch que você está
+git branch -d nome_branch || Deleta a branch (não pode estar nela quando deletar)
+
+git merge nome_branch || Quando você está em uma branch e quer fundir o conteúdo com uma branch secundária (nomeada aqui de nome_branch
+- Pode dar conflito caso dois usuários mexam na mesma linha, e ao dar merge a pessoa se encontra no main|MERGING
+
+
+----------------------------------------------------SOBRE GITHUB----------------------------------------------------
+
+git remote add origin https://link || Vincula o repositório local com o remoto do Github
+git remote --help || Abre página de ajuda com vários comandos github
+
+git clone https://link || Clona o repositório do Link para o seu local
+
+git fetch || Baixa as alterações do GitHub sem alterar no projeto local, sendo oculto e necessário chamar pelo Bash
+
+git push -u origin nome_branch || Envia para a origem (github) as alterações feitas na branch nome_branch. '-u' cria um vínculo permanente entre a branch local e a remota
+
+git pull origin nome_branch || Recebe  as alterações do servidor remoto e as mescla (combina) automaticamente na sua branch atual local
+
+
+----------------------------------------------------SOBRE FORK----------------------------------------------------
+
+Fork é o ato de copiar o repositório remoto para o seu usuário com os seus repositórios.
+Assim, após fazer as modificações, você pode fazer um Pull Request para o repositório original.
+Para sincronizar com o repositório original, você pode ir em Sync Fork no github, depois ainda terá que atualizar par ao local.
+
+
+----------------------------------------------------PADRÕES DE COMMIT----------------------------------------------------
+
+1. Você não faz alterações na main, o correto é criar uma branch "develop", que é a main em desenvolvimento, para testes
+2. Nomes de Branch usadas:
+	2.1. Docs/readme - Branch para alterar documentação
+	2.2. Feat/Cadastro - Nova funcionalidade
+	2.3. Fix/Bug-Login - A correção de um bug;
+	2.4. Perf/otimizar_funcao_cadastro - Mudança de código focada em melhorar performance;
+	2.5. Refactor/mudar_java_para_python - Mudança de código que não adiciona uma funcionalidade e também não corrigi um bug;
+	2.6. Style/padronizar_menu - Mudanças no código que não afetam seu significado (espaço em branco, formatação, ponto e vírgula, etc);
+	2.7. Test/validar_cadastro - Adicionar ou corrigir testes.
+	
+
+---------------------------------------------------- .gitignore ----------------------------------------------------
+
+.gitignore || Arquivo lido pelo git. Tudo o que estiver dentro será ignorado nos commits
+.gitkeep || Arquivo sem conteúdo usado para garantir a existencia de pastas vazias (não aceitas normalmente no github)

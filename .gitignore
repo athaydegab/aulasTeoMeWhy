@@ -1,2 +1,5 @@
 # Ambiente Virtual
 venv
+
+# Extensões do Visual Studio Code
+.vscode

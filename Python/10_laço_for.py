@@ -26,3 +26,11 @@ for i in range(4, max_numero + 1):
         print(i)
     
 # %%
+soma = 0
+qtde_entradas = 4
+
+for i in range(qtde_entradas):
+    altura = float(input("Digite sua Altura: "))
+    soma += altura
+
+print("Soma das Alturas: ", soma)

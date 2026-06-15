@@ -48,4 +48,4 @@ elif idade >= 16:
 
 else:
     print("Você ainda não pode beber álcool legalmente nem dirigir.")
-# %%
+    

@@ -13,3 +13,24 @@ for i in lista:
 print(f"O número {numero} aparece {contador} vezes na lista.")
 
 # %%
+lista.append(10)
+
+print(lista)
+
+# %%
+
+idades = []
+
+while True:
+    idade = input("Digite uma idade: ")
+    
+    if idade == '':
+        break
+
+    idades.append(idade)
+    
+idades = [int(idade) for idade in idades]
+
+print("Idades:", idades)
+
+# %%
